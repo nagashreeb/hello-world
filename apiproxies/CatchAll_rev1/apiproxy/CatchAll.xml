@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="CatchAll">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1413895066918</CreatedAt>
+    <CreatedBy>nagashree.b@hcl.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>CatchAll</DisplayName>
+    <LastModifiedAt>1413895448856</LastModifiedAt>
+    <LastModifiedBy>nagashree.b@hcl.com</LastModifiedBy>
+    <Policies>
+        <Policy>Fault-Unknown</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>
