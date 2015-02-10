@@ -26,9 +26,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>CatchAll</artifactId>
+    <artifactId>dynamic-endpoint</artifactId>
     <version>1.0</version>
-    <name>CatchAll</name>
+    <name>dynamic-endpoint</name>
     <packaging>pom</packaging>
     <pluginRepositories>
         <pluginRepository>
