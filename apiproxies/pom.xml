@@ -28,4 +28,12 @@
 		<module>dynamic-endpoint</module>
 		<module>quotetest</module>
 	</modules>
+	<build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+		</plugins>
+	</build>
 </project>
