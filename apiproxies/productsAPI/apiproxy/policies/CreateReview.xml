@@ -1,0 +1,7 @@
+<ServiceCallout name="CreateReview">
+    <Request clearPayload="false" variable="createReviewRequest" />
+    <Response>createReviewResponse</Response>
+    <HTTPTargetConnection>
+       	<URL>https://api.usergrid.com/cosafinity/sandbox/reviews/</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

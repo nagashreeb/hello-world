@@ -1,0 +1,13 @@
+<ResponseCache name="ResponseCaching">
+   <DisplayName>Response Caching</DisplayName>
+   <CacheResource>ChacheResource</CacheResource>
+    <Scope>Global</Scope>
+    <CacheKey>
+        <Prefix>Apigee</Prefix>
+        <KeyFragment ref="request.uri" />
+        <KeyFragment ref="request.header.Accept" />
+    </CacheKey>
+    <ExpirySettings>
+        <TimeoutInSec>300</TimeoutInSec>
+    </ExpirySettings>
+</ResponseCache>

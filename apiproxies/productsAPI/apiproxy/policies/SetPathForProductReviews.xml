@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="SetPathForProductReviews">
+    <DisplayName>SetPathForProductReviews</DisplayName>
+    <FaultRules/>
+    <Properties/>  
+    <AssignVariable>
+        <Name>target.url</Name>
+        <Value>https://api.usergrid.com/cosafinity/sandbox/products/{myretail.productid}/has/reviews</Value>
+    </AssignVariable>
+
+    <!-- Bug in Assign Message, raised with Baskar, Vijay . TODO! change this once fixed-->
+    <!--
+    <Set>
+        <Path>/products/{myretail.productid}/has/reviews</Path>
+    </Set> 
+    -->
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"></AssignTo>
+</AssignMessage>

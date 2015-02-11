@@ -1,0 +1,12 @@
+<ExtractVariables name="ExtractReviewId">
+	<Source clearPayload="false">createReviewResponse</Source>
+    <VariablePrefix>myretail</VariablePrefix>
+     <JSONPayload>
+        <Variable name="reviewid" type="string">
+            <JSONPath>$.entities[0].uuid</JSONPath>
+        </Variable>
+        <Variable name="reviewcontent" type="string">
+            <JSONPath>$.entities[0].review</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

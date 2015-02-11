@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="ExtractProductsParams">
+    <DisplayName>ExtractProductsParams</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <URIPath>
+        <Pattern ignoreCase="false">/{productid}</Pattern>
+    </URIPath>
+    <Header name="x-apigee-state">
+        <Pattern ignoreCase="false">{state}</Pattern>
+    </Header>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <VariablePrefix>myretail</VariablePrefix>
+</ExtractVariables>

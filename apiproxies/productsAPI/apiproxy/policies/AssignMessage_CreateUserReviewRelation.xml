@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="AssignMessage_CreateUserReviewRelation">
+    <DisplayName>AssignMessage_CreateUserReviewRelation</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Verb>POST</Verb>
+        <Path>/cosafinity/sandbox/users/{accesstoken.userid}/wrote/reviews/{myretail.reviewid}</Path>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request">createUser2Review_relation_Request</AssignTo>
+</AssignMessage>

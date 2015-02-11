@@ -1,0 +1,7 @@
+<ServiceCallout name="GetProduct">
+    <Request clearPayload="false" variable="getproduct_request" />
+    <Response>getproduct_response</Response>
+    <HTTPTargetConnection>
+       	<URL>https://api.usergrid.com/</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

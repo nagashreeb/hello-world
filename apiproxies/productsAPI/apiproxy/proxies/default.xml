@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Default Proxy to create flows on an API</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="productdetails">
+            <Description>Get Products</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractProductsParams</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/*&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="ProductSearch">
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="CreateProductReviews">
+            <Description>Product Reviews</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractProductId</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_CreateReview</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreateReview</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractReviewId</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_CreateUserReviewRelation</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreateUserReviewRelation</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_CreateProductReviewRelation</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreateProductReviewRelation</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_GetUser</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>GetUser</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractUser</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_GetProduct</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>GetProduct</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractProduct</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AssignMessage_CreateActivity</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreateActivity</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Condition>(request.header.Accept=&quot;application/xml&quot;)</Condition>
+                    <FaultRules/>
+                    <Name>JSON2XML</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/*/reviews&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="GetProductReviews">
+            <Description>Get Product Reviews</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractProductId</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/*/reviews&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="Buy">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/*/buy&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Condition>(request.header.Accept=&quot;application/json&quot;) or (request.queryparam.format=&quot;json&quot;)</Condition>
+                <FaultRules/>
+                <Name>XML2JSON</Name>
+            </Step>
+            <Step>
+                <Condition>(request.verb!=&quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>CORS</Name>
+            </Step>
+            <Step>
+                <Condition>(request.verb=&quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>CORSPreflight</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Condition>(request.header.Authorization is null) and (request.verb!=&quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>ApikeyValidation</Name>
+            </Step>
+            <Step>
+                <Condition>not (request.header.Authorization is null) and (request.verb!=&quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>AccesstokenValidation</Name>
+            </Step>
+            <Step>
+                <Condition>(request.verb!=&quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>DeveloperQuotas</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>CustomAnalyticsLogger</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/retail/v2/products</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="buy">
+        <Condition>(proxy.pathsuffix MatchesPath &quot;/*/buy&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        <TargetEndpoint>Buy</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <Condition>request.verb!=&quot;OPTIONS&quot;</Condition>
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

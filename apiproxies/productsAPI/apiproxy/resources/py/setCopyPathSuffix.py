@@ -1,0 +1,1 @@
+flow.setVariable('target.copy.pathsuffix',False);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector enabled="true" continueOnError="false" async="false" name="CustomAnalyticsLogger">
+    <DisplayName>CustomAnalyticsLogger</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Statistics>
+        <Statistic name="catalog" type="string" ref="myretail.catalogid"></Statistic>
+        <Statistic name="product" type="string" ref="myretail.productname"></Statistic>
+        <Statistic name="productid" type="string" ref="myretail.productid"></Statistic>
+        <Statistic name="category" type="string" ref="myretail.categoryid"></Statistic>
+        <Statistic name="subcategory" type="string" ref="myretail.subcategoryid"></Statistic>
+        <Statistic name="user" type="string" ref="accesstoken.userid"></Statistic>
+        <Statistic name="email" type="string" ref="myretail.email"></Statistic>
+        <Statistic name="state" type="string" ref="myretail.state"></Statistic>
+    </Statistics>
+</StatisticsCollector>

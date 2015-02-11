@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="AssignMessage_GetUser">
+    <DisplayName>AssignMessage_GetUser</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Verb>GET</Verb>
+        <Path>/cosafinity/sandbox/users/{accesstoken.userid}</Path>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request">getuser_request</AssignTo>
+</AssignMessage>
