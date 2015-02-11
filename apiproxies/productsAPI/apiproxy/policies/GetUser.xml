@@ -1,7 +1,0 @@
-<ServiceCallout name="GetUser">
-    <Request clearPayload="false" variable="getuser_request" />
-    <Response>getuser_response</Response>
-    <HTTPTargetConnection>
-       	<URL>https://api.usergrid.com/</URL>
-    </HTTPTargetConnection>
-</ServiceCallout>

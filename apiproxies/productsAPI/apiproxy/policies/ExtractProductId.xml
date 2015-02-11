@@ -1,6 +1,0 @@
-<ExtractVariables name="ExtractProductId">
-    <VariablePrefix>myretail</VariablePrefix>
-    <URIPath>
-        <Pattern>/{productid}/reviews</Pattern>
-    </URIPath>
-</ExtractVariables>

@@ -1,7 +1,0 @@
-<ServiceCallout name="CreateUserReviewRelation">
-    <Request clearPayload="false" variable="createUser2Review_relation_Request" />
-    <Response>createUser2Review_relation_Response</Response>
-    <HTTPTargetConnection>
-       	<URL>https://api.usergrid.com/</URL>
-    </HTTPTargetConnection>
-</ServiceCallout>

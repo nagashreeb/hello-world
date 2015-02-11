@@ -1,7 +1,0 @@
-<ServiceCallout name="CreateActivity">
-    <Request clearPayload="false" variable="createactivity_request" />
-    <Response>createactivity_response</Response>
-    <HTTPTargetConnection>
-       	<URL>https://api.usergrid.com/</URL>
-    </HTTPTargetConnection>
-</ServiceCallout>

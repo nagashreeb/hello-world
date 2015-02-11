@@ -26,6 +26,6 @@
     <packaging>pom</packaging>
 	<modules>
 		<module>dynamic-endpoint</module>
-		<module>productsAPI</module>
+		<module>weather-async-js</module>
 	</modules>
 </project>
