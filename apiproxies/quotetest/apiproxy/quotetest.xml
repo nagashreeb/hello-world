@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="quotetest">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1422516124680</CreatedAt>
+    <CreatedBy>nagashree.b@hcl.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>quotetest</DisplayName>
+    <LastModifiedAt>1422516124680</LastModifiedAt>
+    <LastModifiedBy>nagashree.b@hcl.com</LastModifiedBy>
+    <Policies/>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

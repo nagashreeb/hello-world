@@ -26,6 +26,6 @@
     <packaging>pom</packaging>
 	<modules>
 		<module>dynamic-endpoint</module>
-		<module>weather-async-js</module>
+		<module>quotetest</module>
 	</modules>
 </project>
